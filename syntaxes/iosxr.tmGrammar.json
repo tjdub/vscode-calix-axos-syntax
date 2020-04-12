@@ -1,10 +1,10 @@
 {
   "fileTypes": [
-    "ios"
+    "xr"
   ],
   "foldingStartMarker": "^interface|^router|^ip access-list extended",
   "foldingStopMarker": "^!",
-  "name": "Cisco",
+  "name": "cisco-iosxr",
   "patterns": [
     {
       "match": "^\\s*no ",
@@ -172,6 +172,6 @@
       "name": "keyword.other.map-class.cisco"
     }
   ],
-  "scopeName": "text.cisco",
-  "uuid": "f3ba50f0-2bad-48b7-9509-f6d72e353ddb"
+  "scopeName": "text.iosxr",
+  "uuid": "f3ba50f0-2bad-48b7-9509-f6d72e353eec"
 }
