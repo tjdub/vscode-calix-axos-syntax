@@ -84,8 +84,8 @@
       "name": "constant.numeric.iosxr"
     },
     {
-      "match": "\\b[a-zA-Z0-9.\/-]+", 
-      "name": "keyword.other.interface.iosxr" 
+      "match": "\\b(Ten|TwentyFive|Forty|Hundred|FourHundred)?GigE", 
+      "name": "constant.language.iosxr" 
     },                 
     {
       "match": "\\binterface",
