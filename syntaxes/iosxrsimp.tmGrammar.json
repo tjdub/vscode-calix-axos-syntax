@@ -172,5 +172,5 @@
       "match": "\\b(frame-relay|service-policy)\\b",
       "name": "keyword.other.map-class.cisco"
     }
-  ],
+  ]
 }
