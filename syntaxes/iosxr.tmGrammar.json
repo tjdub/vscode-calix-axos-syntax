@@ -2,7 +2,7 @@
   "fileTypes": [
     "xr"
   ],
-  "foldingStartMarker": "^route-policy|^interface|^router|^ip access-list extended|^telemetry|^ptp",
+  "foldingStartMarker": "^route-policy|^interface|^router|^ip access-list extended|^telemetry|^ptp|^segment-routing",
   "foldingStopMarker": "^!",
   "name": "cisco-iosxr",
   "patterns": [
@@ -84,17 +84,17 @@
       "name": "constant.numeric.iosxr"
     },
     {
-      "match": "\\b(Ten|TwentyFive|Forty|Hundred|FourHundred)?GigE", 
-      "name": "constant.language.iosxr" 
+      "match": "\\binterface",
+      "name": "constant.language.interface.iosxr"
+    },
+    {
+      "match": "\\b(Ten|TwentyFive|Forty|Hundred|FourHundred)?GigE[0-9.\/-]+", 
+      "name": "constant.language.physinterface.iosxr" 
     }, 
     {
-      "match": "\\b[0-9.\/-]*",
-      "name": "constant.language.iosxr"
-    },
-    {
-      "match": "\\binterface",
-      "name": "constant.language.iosxr"
-    },
+      "match": "\\b(Bundle-Ether|BVI)[0-9]+", 
+      "name": "constant.language.logicalinterface.iosxr" 
+    }, 
     {
       "match": "^!.*$",
       "name": "comment.bang.iosxr"
