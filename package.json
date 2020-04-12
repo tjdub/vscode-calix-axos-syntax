@@ -1,5 +1,5 @@
 {
-    "name": "cisco",
+    "name": "iosxr",
     "displayName": "Cisco IOS-XR Syntax",
     "description": "Cisco IOS-XR Syntax Highlighter",
     "version": "1.0.0",
@@ -11,7 +11,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/phbedard/vscode-cisco-iosxr-syntax.git"
+        "url": "git+https://github.com/phbedard/vscode-cisco-xr-syntax.git"
     },
     "categories": [
         "Programming Languages"
@@ -19,9 +19,8 @@
     "contributes": {
         "languages": [
             {
-                "id": "cisco",
+                "id": "iosxr",
                 "aliases": [
-                    "Cisco",
                     "iosxr", 
                     "ios-xr" 
                 ],
@@ -35,7 +34,7 @@
             {
                 "language": "cisco-iosxr",
                 "scopeName": "text.iosxr",
-                "path": "./syntaxes/cisco.syntax.json"
+                "path": "./syntaxes/iosxr.tmGrammar.json"
             }
         ]
     }
