@@ -4,14 +4,14 @@
 <dict>
 	<key>fileTypes</key>
 	<array>
-		<string>ios</string>
+		<string>xr</string>
 	</array>
 	<key>foldingStartMarker</key>
 	<string>^interface|^router|^ip access-list extended</string>
 	<key>foldingStopMarker</key>
 	<string>^!</string>
 	<key>name</key>
-	<string>Cisco</string>
+	<string>cisco-iosxr</string>
 	<key>patterns</key>
 	<array>
 		<dict>
@@ -272,9 +272,9 @@
 		</dict>
 	</array>
 	<key>scopeName</key>
-	<string>text.cisco</string>
+	<string>text.iosxr</string>
 	<key>uuid</key>
-	<string>f3ba50f0-2bad-48b7-9509-f6d72e353ddb</string>
+	<string>f3ba50f0-2bad-5001-9509-f6d72e353ddb</string>
 </dict>
 </plist>
 
