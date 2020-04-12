@@ -19,7 +19,7 @@
     "contributes": {
         "languages": [
             {
-                "id": "iosxr",
+                "id": "cisco-iosxr",
                 "aliases": [
                     "iosxr", 
                     "ios-xr" 
