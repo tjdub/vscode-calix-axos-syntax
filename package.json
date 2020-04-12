@@ -33,9 +33,9 @@
         ],
         "grammars": [
             {
-                "language": "cisco",
-                "scopeName": "text.cisco",
-                "path": "./syntaxes/iosxr.tmLanguage"
+                "language": "cisco-iosxr",
+                "scopeName": "text.iosxr",
+                "path": "./syntaxes/cisco.syntax.json"
             }
         ]
     }

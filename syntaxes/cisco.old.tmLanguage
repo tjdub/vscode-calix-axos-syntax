@@ -7,7 +7,7 @@
 		<string>ios</string>
 	</array>
 	<key>foldingStartMarker</key>
-	<string>^interface|^router|^ip access-list extended|^l2vpn|^telemetry model driven|^segment-routing</string>
+	<string>^interface|^router|^ip access-list extended</string>
 	<key>foldingStopMarker</key>
 	<string>^!</string>
 	<key>name</key>
@@ -16,7 +16,7 @@
 	<array>
 		<dict>
 			<key>match</key>
-			<string>^\s*no </stringjamiewoodio.cisco-1.8.1>
+			<string>^\s*no </string>
 			<key>name</key>
 			<string>invalid.illegal.cisco</string>
 		</dict>
@@ -133,7 +133,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b((Fast|Gigabit|TenGigabit|FortyGigabit)?Ethernet|Dialer|Dot11Radio|ATM|BRI|Tunnel(Group-)?Async|BVI|[Ll]oopback|Null|[Pp]ort-channel|Virtual-(Access|Dot11Radio|PPP|Template)|TenGigE|TwentyFiveGigE|HundredGigE|FourHundredGigE|tunnel-ip|Bundle-Ether|MgmtEth0)</string>
+			<string>\b((Fast|Gigabit|TenGigabit|FortyGigabit)?Ethernet|Dialer|Dot11Radio|ATM|BRI|Tunnel(Group-)?Async|BVI|[Ll]oopback|Null|[Pp]ort-channel|Virtual-(Access|Dot11Radio|PPP|Template)|TenGigE|TwentyFiveGigE|HundredGigE|tunnel-ip|Bundle-Ether|MgmtEth0)</string>
 			<key>name</key>
 			<string>constant.language.cisco</string>
 		</dict>
