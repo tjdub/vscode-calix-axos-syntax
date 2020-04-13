@@ -279,10 +279,6 @@
       "name": "invalid.illegal.iosxr"
     },
     {
-      "match": "^(router|ptp|segment-routing|mpls|snmp-server)",
-      "name": "strong.toplevelcfg.iosxr"
-    },
-    {
       "match": "^(ipv4|ipv6) access-list",
       "name": "support.function.iosxr"
     },
@@ -320,7 +316,7 @@
       "name": "markup.list.iosxr"
     },
     {
-      "match": "^[\\s]*!(.*)",
+      "match": "^!!(.*)",
       "name": "comment.iosxr"
     },
     {
@@ -336,8 +332,12 @@
       "name": "invalid.illegal.iosxr"
     },
     {
-      "match": "(?<=\\n)[\\w\\W]*(?=\\n!)",
-      "name": "invalid.illegal.iosxr"
+      "match": "(?<=\\n)(\\w|\\W)*(?=\\n)",
+      "name": "invalid.illegal.inside.iosxr"
+    },
+    {
+      "match": "(?<=\\n)[\\w\\W]*(?=\\n)",
+      "name": "invalid.illegal.inside.iosxr"
     },
     {
       "match": "((^$|no )(interface|line|ip (access-list (extended|standard)|dhcp (pool|excluded-address)|route|classless|subnet-zero|nat|http|local pool|flow-export|flow-top-talkers|inspect|domain|ips|host)|router|voice-(card|port)|dial-peer|voice (translation-(rule|profile)|register (global|pool|dn)|service)|application$|crypto (pki|keyring|isakmp (profile|policy|client configuration)|ipsec (profile|transform-set)|(dynamic-)?map)|telephony-service|ephone(-dn)?|banner|(class|policy|route)-map|map-class)|\\b(ssid|pvc|certificate)|service|clock|boot|logging|control-plane|aaa|(tftp|snmp|radius)-server|ntp|bridge|(access|dialer)-list|archive)\\b",
@@ -426,6 +426,10 @@
     {
       "match": "\\bend-class-map\\b",
       "name": "keyword.other.class-map.iosxr"
+    },
+    {
+      "match": "((?<=^)\\w+)", 
+      "name": "strong.toplevelcfg.iosxr"
     },
     {
       "match": "!!ad",
