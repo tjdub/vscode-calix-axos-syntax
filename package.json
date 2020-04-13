@@ -4,7 +4,7 @@
     "description": "Cisco IOS-XR Syntax Highlighter",
     "version": "1.0.0",
     "publisher": "philbedard",
-    "icon": "images/cisco.jpg",
+    "icon": "images/cisco.png",
     "license": "MIT",
     "engines": {
         "vscode": "^1.5.0"
