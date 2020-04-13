@@ -279,7 +279,7 @@
       "name": "invalid.illegal.iosxr"
     },
     {
-      "match": "^(router|ptp|segment-routing|mpls|snmp-server|).*$",
+      "match": "^(router|ptp|segment-routing|mpls|snmp-server)",
       "name": "strong.toplevelcfg.iosxr"
     },
     {
@@ -336,6 +336,10 @@
       "name": "invalid.illegal.iosxr"
     },
     {
+      "match": "(?<=\\n)[\\w\\W]*(?=\\n!)",
+      "name": "invalid.illegal.iosxr"
+    },
+    {
       "match": "((^$|no )(interface|line|ip (access-list (extended|standard)|dhcp (pool|excluded-address)|route|classless|subnet-zero|nat|http|local pool|flow-export|flow-top-talkers|inspect|domain|ips|host)|router|voice-(card|port)|dial-peer|voice (translation-(rule|profile)|register (global|pool|dn)|service)|application$|crypto (pki|keyring|isakmp (profile|policy|client configuration)|ipsec (profile|transform-set)|(dynamic-)?map)|telephony-service|ephone(-dn)?|banner|(class|policy|route)-map|map-class)|\\b(ssid|pvc|certificate)|service|clock|boot|logging|control-plane|aaa|(tftp|snmp|radius)-server|ntp|bridge|(access|dialer)-list|archive)\\b",
       "name": "support.control.iosxr"
     },
@@ -344,7 +348,7 @@
       "name": "constant.numeric.iosxr"
     },
     {
-      "match": "\\binterface",
+      "match": "(?<!-)interface\\b",
       "name": "constant.language.interface.iosxr"
     },
     {
@@ -416,15 +420,11 @@
       "name": "keyword.other.class-map.iosxr"
     },
     {
-      "match": "^class-map\\b",
-      "name": "keyword.other.class-map.iosxr"
+      "match": "\\b((class|policy)-map|end-(policy|class)-map)\\b",
+      "name": "string.qosmap.iosxr"
     },
     {
       "match": "\\bend-class-map\\b",
-      "name": "keyword.other.class-map.iosxr"
-    },
-    {
-      "match": "\\bmatch-(all|any).*$",
       "name": "keyword.other.class-map.iosxr"
     },
     {
