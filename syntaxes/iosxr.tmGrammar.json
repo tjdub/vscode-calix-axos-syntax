@@ -271,15 +271,19 @@
       "name": "variable.other" 
     },
     {
+      "match": "!!br",
+      "name": "string.unquoted" 
+    },
+    {
       "match": "^\\s*no ",
       "name": "invalid.illegal.iosxr"
     },
     {
-      "match": "^router.*",
-      "name": "support.class.iosxr"
+      "match": "^(router|ptp|segment-routing|mpls|snmp-server|).*$",
+      "name": "strong.toplevelcfg.iosxr"
     },
     {
-      "match": "access-list",
+      "match": "^(ipv4|ipv6) access-list",
       "name": "support.function.iosxr"
     },
     {
@@ -296,12 +300,12 @@
       "name": "string.unquoted.iosxr"
     },
     {
-      "match": "deny ",
-      "name": "support.constant.iosxr"
+      "match": "permit ",
+      "name": "markup.inserted.aclpermit.iosxr"
     },
     {
-      "match": "permit ",
-      "name": "constant.character.escape.iosxr"
+      "match": "deny ",
+      "name": "invalid.illegal.acldeny.iosxr"
     },
     {
       "match": "object-group",
@@ -328,7 +332,7 @@
       "name": "constant.numeric.ipv6.iosxr"
     },
     {
-      "match": "\\b(end|shutdown)$",
+      "match": "\\bshutdown$",
       "name": "invalid.illegal.iosxr"
     },
     {
@@ -342,6 +346,10 @@
     {
       "match": "\\binterface",
       "name": "constant.language.interface.iosxr"
+    },
+    {
+      "match": "\\bl2transport$",
+      "name": "constant.character.escape.l2trans.iosxr"
     },
     {
       "match": "\\bMgmtEth.*", 
@@ -380,11 +388,11 @@
       "name": "keyword.iosxr"
     },
     {
-      "match": "\\b(ipv(4|6) (address|unnumbered|access-group|)|speed|(full-|half-)?duplex|cdp enable|encapsulation|snmp|bandwidth|physical-layer|mtu|lacp|bfd)\\b",
+      "match": "\\b(ipv(4|6) address|unnumbered|speed|(full-|half-)?duplex|cdp|encapsulation|bandwidth|mtu|lacp|bfd|channel-group)\\b",
       "name": "keyword.control.interface.iosxr"
     },
     {
-      "match": "^(extcommunity|prefix)-set",
+      "match": "\\b(extcommunity|prefix)-set|route-policy|end-policy$|end-set\\b", 
       "name": "string.regexp.sets.iosxr"
     },
     {
@@ -392,16 +400,12 @@
       "name": "string.regexp.interface.iosxr"
     },
     {
-      "match": "\\bservice-policy\\b",
+      "match": ".*service-policy\\b",
       "name": "string.regexp.interface.iosxr"
     },
     {
       "match": "\\b(domain-name|default-router|dns-server|host|client-(name|identifier)|option)\\b",
       "name": "keyword.other.dhcp.iosxr"
-    },
-    {
-      "match": "\\b(permit|deny|log|established|evaluate)\\b",
-      "name": "keyword.other.acl.iosxr"
     },
     {
       "match": "\\b(auth(entic|oriz)ation|accounting)\\b",
@@ -424,13 +428,9 @@
       "name": "keyword.other.class-map.iosxr"
     },
     {
-      "match": "^service-policy\\b",
-      "name": "keyword.other.service-policy.iosxr"
-    }, 
-    {
       "match": "!!ad",
       "name": "markup.inserted" 
-    },
+    }
   ],
   "scopeName": "text.iosxr",
   "uuid": "f3ba50f0-2bad-48b7-9509-f6d72e353eec"
