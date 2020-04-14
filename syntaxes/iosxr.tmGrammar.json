@@ -367,10 +367,6 @@
       "name": "constant.language.iosxr"
     },
     {
-      "match": "^(username|hostname|password|secret)\\b",
-      "name": "keyword.iosxr"
-    },
-    {
       "match": "\\b(ipv(4|6) address|unnumbered|speed|(full-|half-)?duplex|cdp|encapsulation|lldp|bandwidth|mtu|lacp|bfd|channel-group)\\b",
       "name": "keyword.control.interface.iosxr"
     },
@@ -379,15 +375,15 @@
       "name": "support.type.routing.iosxr"
     },
     {
-      "match": "^(username|hostname|logging|cdp|lldp|netconf-yang|grpc|frequency|gnss|key|call-home|line|telemetry|bfd|control-plane|vty-pool|aaa|taskgroup|service|hw-platform|(snmp|tacacs|telnet|ssh)-server)\\b",
+      "match": "^(username|hostname|logging|cdp|ntp|lldp|netconf-yang|grpc|frequency|gnss|key|domain|call-home|line|telemetry|bfd|control-plane|vty-pool|aaa|taskgroup|usergroup|service|hw-platform|(snmp|radius|tacacs|telnet|ssh)(-server)?)\\b",
       "name": "keyword.control.system.iosxr"
     },
     {
-      "match": "^(evpn|l2vpn)\\b",
+      "match": "^(vrf|evpn|l2vpn)\\b",
       "name": "constant.character.escape.service.iosxr"
     },
     {
-      "match": "\\b(extcommunity|prefix)-set|route-policy|end-policy$|end-set\\b", 
+      "match": "(extcommunity|prefix)-set|route-policy|end-policy$|end-set\\b", 
       "name": "string.regexp.sets.iosxr"
     },
     {
@@ -395,12 +391,8 @@
       "name": "string.regexp.interface.iosxr"
     },
     {
-      "match": ".*service-policy\\b",
+      "match": "\\bservice-policy\\b",
       "name": "string.regexp.interface.iosxr"
-    },
-    {
-      "match": "\\b(auth(entic|oriz)ation|accounting)\\b",
-      "name": "keyword.other.aaa.iosxr"
     },
     {
       "match": "\\b((class|policy)-map|end-(policy|class)-map)\\b",
@@ -417,6 +409,10 @@
     {
       "match": "^!$", 
       "name": "constant.regexp.endsection.iosxr"
+    },
+    {
+      "match": "^\\s+([^!]+)", 
+      "name": "constant.other.innerconfig.iosxr"
     },
     {
       "match": "!!ad",
