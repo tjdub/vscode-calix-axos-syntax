@@ -379,8 +379,8 @@
       "name": "keyword.control.system.iosxr"
     },
     {
-      "match": "(?<!-)(vrf|evpn|l2vpn|ptp|dhcp)(?!-)\\b",
-      "name": "constant.character.escape.service.iosxr"
+      "match": "(?<!-)(vrf|evpn|l2vpn|ptp|dhcp|ethernet (cfm|oam|sla))(?!-)\\b",
+      "name": "constant.character.escape.services.iosxr"
     },
     {
       "match": "(extcommunity|prefix)-set|route-policy|end-policy$|end-set\\b", 
