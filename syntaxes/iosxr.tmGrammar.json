@@ -375,7 +375,7 @@
       "name": "support.type.routing.iosxr"
     },
     {
-      "match": "^(username|accounting|hostname|logging|cdp|ntp|lldp|netconf-yang|grpc|frequency|gnss-receiver|key|domain|call-home|line|telemetry|bfd|control-plane|vty-pool|aaa|taskgroup|usergroup|service|hw-platform|(snmp|radius|tacacs|telnet|ssh)(-server)?)\\b",
+      "match": "^(username|accounting|hostname|logging|cdp|ntp|lldp|netconf-yang|grpc|frequency|gnss-receiver|key|domain|call-home|line|telemetry|bfd|control-plane|vty-pool|aaa|fpd|taskgroup|usergroup|service|hw-platform|(snmp|radius|tacacs|telnet|ssh)(-server)?)\\b",
       "name": "keyword.control.system.iosxr"
     },
     {
