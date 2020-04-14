@@ -143,8 +143,18 @@
       "name": "string.qosmap.iosxr"
     },
     {
-      "match": "\\bend-class-map\\b",
-      "name": "keyword.other.class-map.iosxr"
+      "match": "^class-map\\smatch-any\\s(.*)",
+            "captures": { 
+                "0": { "name": "string.classmap.iosxr" }
+                }
+    },
+    {
+      "match": "\\b((class|policy)-map|end-(policy|class)-map)\\b",
+      "name": "string.policymap.iosxr"
+    },
+    {
+      "match": "\\bend-(policy|class)-map\\b",
+      "name": "keyword.other.endmap.iosxr"
     },
     {
       "match": "^([a-zA-Z]).*$", 
