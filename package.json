@@ -35,7 +35,7 @@
             {
                 "language": "cisco-iosxr",
                 "scopeName": "text.iosxr",
-                "path": "./syntaxes/iosxr.tmGrammar.json"  
+                "path": "./syntaxes/iosxr.tmGrammar.repo.json"  
             }
         ]
     }

@@ -10,298 +10,53 @@
   "foldingStartMarker": "^route-policy|^interface|^router|^ip access-list extended|^telemetry|^ptp|^segment-routing",
   "foldingStopMarker": "^!",
   "name": "cisco-iosxr",
+  "repository": { 
+      "comments": { 
+        "patterns": [ 
+            {
+            "match": "\\b(description|remark|system message)\\s.*$",
+            "name": "comment.documentation.iosxr"
+            },
+            {
+            "match": "^!!",
+            "name": "comment.iosxr"
+            }
+        ]
+    }, 
+      "acl": { 
+        "patterns": [ 
+            {
+            "match": "^((ipv4|ipv6) access-list)\\s(.*$)",
+            "captures": { 
+                "1": { "name": "support.function.acl.iosxr"}, 
+                "3": { "name": "invalid.illegal.aclname.iosxr"} 
+                }
+            },
+            {
+            "match": "permit ",
+            "name": "markup.inserted.aclpermit.iosxr"
+            },
+            {
+            "match": "deny ",
+            "name": "invalid.illegal.acldeny.iosxr"
+            },
+            {
+            "match": "object-group",
+            "name": "support.function.acl.iosxr"
+            }
+        ]
+    }
+  },   
   "patterns": [
-    {
-      "match": "!!a$",
-      "name": "emphasis" 
-    },
-    {
-      "match": "!!b$",
-      "name": "strong" 
-    },
-    {
-      "match": "!!c$",
-      "name": "header" 
-    },
-    {
-      "match": "!!d$",
-      "name": "comment.line" 
-    },
-    {
-      "match": "!!d$",
-      "name": "comment.block" 
-    },
-    {
-      "match": "!!e$",
-      "name": "comment.documentation" 
-    },
-    {
-      "match": "!!f$",
-      "name": "constant.language" 
-    },
-    {
-      "match": "!!g$",
-      "name": "constant.character" 
-    },
-    {
-      "match": "!!h$",
-      "name": "constant.character.escape" 
-    },
-    {
-      "match": "!!i$",
-      "name": "constant.other" 
-    },
-    {
-      "match": "!!j$",
-      "name": "constant.other.attribute-name" 
-    },
-    {
-      "match": "!!k$",
-      "name": "constant.other.inherited-class" 
-    },
-    {
-      "match": "!!l$",
-      "name": "constant.numeric" 
-    },
-    {
-      "match": "!!m$",
-      "name": "constant.regexp" 
-    },
-    {
-      "match": "!!n$",
-      "name": "entity.name.tag" 
-    },
-    {
-      "match": "!!o$",
-      "name": "entity.name.function" 
-    },
-    {
-      "match": "!!p$",
-      "name": "entity.name.class" 
-    },
-    {
-      "match": "!!q$",
-      "name": "entity.name.selector" 
-    },
-    {
-      "match": "!!r$",
-      "name": "entity.other.attribute-name" 
-    },
-    {
-      "match": "!!s$",
-      "name": "invalid" 
-    },
-    {
-      "match": "!!t$",
-      "name": "invalid.illegal" 
-    },
-    {
-      "match": "!!u$",
-      "name": "invalid.deprecated" 
-    },
-    {
-      "match": "!!v$",
-      "name": "keyword" 
-    },
-    {
-      "match": "!!w$",
-      "name": "keyword.control" 
-    },
-    {
-      "match": "!!x$",
-      "name": "keyword.control.less" 
-    },
-    {
-      "match": "!!y$",
-      "name": "keyword.operator" 
-    },
-    {
-      "match": "!!z$",
-      "name": "keyword.operator.new" 
-    },
-    {
-      "match": "\\b!!aa",
-      "name": "markup.underline" 
-    },
-    {
-      "match": "!!ab",
-      "name": "markup.bold" 
-    },
-    {
-      "match": "!!ac",
-      "name": "markup.heading" 
-    },
-    {
-      "match": "!!ae",
-      "name": "markup.deleted" 
-    },
-    {
-      "match": "!!af",
-      "name": "markup.italic" 
-    },
-    {
-      "match": "!!ag",
-      "name": "markup.list.numbered" 
-    },
-    {
-      "match": "!!ah",
-      "name": "markup.list.unnumbered" 
-    },
-    {
-      "match": "!!ai",
-      "name": "markup.list.quote" 
-    },
-    {
-      "match": "!!aj",
-      "name": "markup.raw" 
-    },
-    {
-      "match": "!!ak",
-      "name": "markup.other" 
-    },
-    {
-      "match": "!!al",
-      "name": "meta" 
-    },
-    {
-      "match": "!!am",
-      "name": "meta.embedded" 
-    },
-    {
-      "match": "!!an",
-      "name": "meta.preprocesor" 
-    },
-    {
-      "match": "!!ao",
-      "name": "meta.section" 
-    },
-    {
-      "match": "!!aq",
-      "name": "string" 
-    },
-    {
-      "match": "!!ar",
-      "name": "string.tag" 
-    },
-    {
-      "match": "!!at",
-      "name": "string.value" 
-    },
-    {
-      "match": "!!au",
-      "name": "string.regexp" 
-    },
-    {
-      "match": "!!av",
-      "name": "string.source" 
-    },
-    {
-      "match": "!!ax",
-      "name": "string.quoted" 
-    },
-    {
-      "match": "!!ay",
-      "name": "string.unquoted" 
-    },
-    {
-      "match": "!!az",
-      "name": "string.interpolated" 
-    },
-    {
-      "match": "!!ba",
-      "name": "storage" 
-    },
-    {
-      "match": "!!bb",
-      "name": "storage.type" 
-    },
-    {
-      "match": "!!bc",
-      "name": "storage.modifier" 
-    },
-    {
-      "match": "!!bd",
-      "name": "support.function" 
-    },
-    {
-      "match": "!!be",
-      "name": "support.class" 
-    },
-    {
-      "match": "!!bf",
-      "name": "support.type" 
-    },
-    {
-      "match": "!!bg",
-      "name": "support.constant" 
-    },
-    {
-      "match": "!!bh",
-      "name": "support.variable" 
-    },
-    {
-      "match": "!!bi",
-      "name": "support.other" 
-    },
-    {
-      "match": "!!bj",
-      "name": "string" 
-    },
-    {
-      "match": "!!bk",
-      "name": "string.tag" 
-    },
-    {
-      "match": "!!bl",
-      "name": "string.value" 
-    },
-    {
-      "match": "!!bm",
-      "name": "string.regexp" 
-    },
-    {
-      "match": "!!bn",
-      "name": "variable" 
-    },
-    {
-      "match": "!!bo",
-      "name": "variable.parameter" 
-    },
-    {
-      "match": "!!bp",
-      "name": "variable.language" 
-    },
-    {
-      "match": "!!bq",
-      "name": "variable.other" 
-    },
-    {
-      "match": "!!br",
-      "name": "string.unquoted" 
-    },
+    {  "include": "#comments" },  
+    {  "include": "#acl" },  
     {
       "match": "^\\s*no ",
       "name": "invalid.illegal.iosxr"
     },
     {
-      "match": "^(ipv4|ipv6) access-list",
-      "name": "support.function.acl.iosxr"
-    },
-    {
       "match": "crypto ",
       "name": "string.unquoted.iosxr"
-    },
-    {
-      "match": "permit ",
-      "name": "markup.inserted.aclpermit.iosxr"
-    },
-    {
-      "match": "deny ",
-      "name": "invalid.illegal.acldeny.iosxr"
-    },
-    {
-      "match": "object-group",
-      "name": "support.function.acl.iosxr"
     },
     {
       "match": "host",
@@ -355,22 +110,6 @@
       "match": "\\b(Loopback|Bundle-Ether|BVI)[0-9]+", 
       "name": "variable.logicalinterface.iosxr" 
     }, 
-    {
-      "match": "\\b(description|remark|system message)\\s.*$",
-      "name": "comment.documentation.iosxr"
-    },
-    {
-      "match": "\\bno\\b",
-      "name": "constant.language.iosxr"
-    },
-    {
-      "match": "^!!",
-      "name": "comment.iosxr"
-    },
-    {
-      "match": "Configuration",
-      "name": "markup.bold.version.iosxr"
-    },
     {
       "match": "\\b(ipv(4|6) address|unnumbered|speed|(full-|half-)?duplex|cdp|encapsulation|lldp|bandwidth|mtu|lacp|bfd|channel-group)\\b",
       "name": "keyword.control.interface.iosxr"
