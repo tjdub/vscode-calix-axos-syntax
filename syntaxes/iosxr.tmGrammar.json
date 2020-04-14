@@ -280,19 +280,10 @@
     },
     {
       "match": "^(ipv4|ipv6) access-list",
-      "name": "support.function.iosxr"
+      "name": "support.function.acl.iosxr"
     },
     {
       "match": "crypto ",
-      "name": "string.unquoted.iosxr"
-    },
-    {
-      "begin": "\\^C",
-      "end": "\\^C",
-      "name": "string.quoted.iosxr"
-    },
-    {
-      "match": "any[46]? ",
       "name": "string.unquoted.iosxr"
     },
     {
@@ -305,11 +296,7 @@
     },
     {
       "match": "object-group",
-      "name": "markup.list.iosxr"
-    },
-    {
-      "match": "object",
-      "name": "markup.list.iosxr"
+      "name": "support.function.acl.iosxr"
     },
     {
       "match": "host",
@@ -340,10 +327,6 @@
       "name": "invalid.illegal.inside.iosxr"
     },
     {
-      "match": "((^$|no )(interface|line|ip (access-list (extended|standard)|dhcp (pool|excluded-address)|route|classless|subnet-zero|nat|http|local pool|flow-export|flow-top-talkers|inspect|domain|ips|host)|router|voice-(card|port)|dial-peer|voice (translation-(rule|profile)|register (global|pool|dn)|service)|application$|crypto (pki|keyring|isakmp (profile|policy|client configuration)|ipsec (profile|transform-set)|(dynamic-)?map)|telephony-service|ephone(-dn)?|banner|(class|policy|route)-map|map-class)|\\b(ssid|pvc|certificate)|service|clock|boot|logging|control-plane|aaa|(tftp|snmp|radius)-server|ntp|bridge|(access|dialer)-list|archive)\\b",
-      "name": "support.control.iosxr"
-    },
-    {
       "match": "\\b([0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}|\\h{1,4}\\.\\h{1,4}\\.\\h{1,4}(\\.\\h{1,2})?)\\b",
       "name": "constant.numeric.iosxr"
     },
@@ -372,10 +355,6 @@
       "name": "variable.logicalinterface.iosxr" 
     }, 
     {
-      "match": "^!.*$",
-      "name": "comment.bang.iosxr"
-    },
-    {
       "match": "\\b(description|remark|system message)\\s.*$",
       "name": "comment.documentation.iosxr"
     },
@@ -392,8 +371,20 @@
       "name": "keyword.iosxr"
     },
     {
-      "match": "\\b(ipv(4|6) address|unnumbered|speed|(full-|half-)?duplex|cdp|encapsulation|bandwidth|mtu|lacp|bfd|channel-group)\\b",
+      "match": "\\b(ipv(4|6) address|unnumbered|speed|(full-|half-)?duplex|cdp|encapsulation|lldp|bandwidth|mtu|lacp|bfd|channel-group)\\b",
       "name": "keyword.control.interface.iosxr"
+    },
+    {
+      "match": "^(router|multicast-routing|mpls|dot1x|igmp|mld).*$",
+      "name": "support.type.routing.iosxr"
+    },
+    {
+      "match": "^(username|hostname|logging|cdp|lldp|netconf-yang|grpc|frequency|gnss|key|call-home|line|telemetry|bfd|control-plane|vty-pool|aaa|taskgroup|service|hw-platform|(snmp|tacacs|telnet|ssh)-server)\\b",
+      "name": "keyword.control.system.iosxr"
+    },
+    {
+      "match": "^(evpn|l2vpn)\\b",
+      "name": "constant.character.escape.service.iosxr"
     },
     {
       "match": "\\b(extcommunity|prefix)-set|route-policy|end-policy$|end-set\\b", 
@@ -408,16 +399,8 @@
       "name": "string.regexp.interface.iosxr"
     },
     {
-      "match": "\\b(domain-name|default-router|dns-server|host|client-(name|identifier)|option)\\b",
-      "name": "keyword.other.dhcp.iosxr"
-    },
-    {
       "match": "\\b(auth(entic|oriz)ation|accounting)\\b",
       "name": "keyword.other.aaa.iosxr"
-    },
-    {
-      "match": "\\bmatch (ip precedence|protocol|access-group)\\b",
-      "name": "keyword.other.class-map.iosxr"
     },
     {
       "match": "\\b((class|policy)-map|end-(policy|class)-map)\\b",
@@ -428,8 +411,12 @@
       "name": "keyword.other.class-map.iosxr"
     },
     {
-      "match": "((?<=^)\\w+)", 
-      "name": "strong.toplevelcfg.iosxr"
+      "match": "^([a-zA-Z]).*$", 
+      "name": "strong.emphasis.startsection.iosxr"
+    },
+    {
+      "match": "^!$", 
+      "name": "constant.regexp.endsection.iosxr"
     },
     {
       "match": "!!ad",
