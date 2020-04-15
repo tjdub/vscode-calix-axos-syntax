@@ -26,10 +26,11 @@
       "acl": { 
         "patterns": [ 
             {
-            "match": "\\bipv[4|6]\\saccess-(group|list)\\s(.*)",
+            "match": "\\bipv[4|6]\\saccess-(group|list)\\s(.*) (\\w+)",
             "captures": { 
                 "0": { "name": "support.function.acl.iosxr"}, 
-                "2": { "name": "variable.aclname.iosxr"} 
+                "2": { "name": "variable.aclname.iosxr"},  
+                "3": { "name": "keyword.acldir.iosxr"}  
                 }
             },
             {
@@ -74,7 +75,7 @@
             "match": "^.*-set\\s(opaque|rt|soo|cost|bandwidth)?(.*)",
                     "captures": { 
                         "0": { "name": "string.regexp.sets.iosxr" }, 
-                        "1": { "name": "string.regexp.extcommtype.iosxr" }, 
+                        "1": { "name": "keyword.extcommtype.iosxr" }, 
                         "2": { "name": "variable.sets.name.iosxr" }
                         }
             },
@@ -154,7 +155,7 @@
       "name": "variable.version.iosxr"
     },
     {
-      "match": "(?<!-)interface\\b",
+      "match": "(?<!-)interface\\s",
       "name": "constant.language.interface.iosxr"
     },
     {
@@ -186,7 +187,7 @@
       "name": "support.type.routing.iosxr"
     },
     {
-      "match": "^(username|accounting|clock|hw-module|hostname|logging|cdp|ntp|lldp|netconf-yang|grpc|frequency|gnss-receiver|key|domain|call-home|line|telemetry|bfd|control-plane|lawful-intercept|vty-pool|xml|aaa|controller|license|lpts|gnss-receiver|fpd|taskgroup|usergroup|service|hw-platform|(snmp|radius|tacacs|telnet|ssh)(-server)?)\\b",
+      "match": "^(username|group|end-group|apply-group|accounting|clock|hw-module|hostname|logging|cdp|ntp|lldp|netconf-yang|grpc|frequency|gnss-receiver|key|domain|call-home|line|telemetry|bfd|control-plane|lawful-intercept|vty-pool|xml|aaa|controller|license|lpts|gnss-receiver|fpd|taskgroup|usergroup|service|hw-platform|(snmp|radius|tacacs|telnet|ssh)(-server)?)\\b",
       "name": "keyword.control.system.iosxr"
     },
     {
@@ -194,7 +195,7 @@
       "name": "constant.character.escape.services.iosxr"
     },
     {
-      "match": "\\bvrf\\s(.*)",
+      "match": "\\bvrf\\s(\\w*)",
           "captures": { 
               "0": { "name": "constant.character.escape.vrf.iosxr" }, 
               "1": { "name": "variable.vrf.name.iosxr" } 
@@ -203,6 +204,10 @@
     {
       "match": "^!$", 
       "name": "constant.regexp.endsection.iosxr"
+    },
+    {
+      "match": "^end$", 
+      "name": "strong.endconfig.iosxr"
     }
   ]
 }
