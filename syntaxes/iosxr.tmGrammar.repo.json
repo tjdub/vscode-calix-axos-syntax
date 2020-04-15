@@ -26,10 +26,10 @@
       "acl": { 
         "patterns": [ 
             {
-            "match": "^((ipv4|ipv6) access-list)\\s(.*$)",
+            "match": "\\bipv[4|6]\\saccess-(group|list)\\s(.*)",
             "captures": { 
-                "1": { "name": "support.function.acl.iosxr"}, 
-                "3": { "name": "invalid.illegal.aclname.iosxr"} 
+                "0": { "name": "support.function.acl.iosxr"}, 
+                "2": { "name": "variable.aclname.iosxr"} 
                 }
             },
             {
@@ -45,11 +45,78 @@
             "name": "support.function.acl.iosxr"
             }
         ]
+    }, 
+      "rpl": { 
+        "patterns": [ 
+            {
+            "match": "^.*-set\\s(opaque|rt|soo|cost|bandwidth)?(.*)",
+                    "captures": { 
+                        "0": { "name": "string.regexp.sets.iosxr" }, 
+                        "2": { "name": "variable.sets.name.iosxr" }
+                        }
+            },
+            {
+            "match": "\\broute-policy\\s(.*)",
+                    "captures": { 
+                        "0": { "name": "keyword.routepolicy.iosxr" }, 
+                        "1": { "name": "variable.routepolicy.name.iosxr" }
+                        }
+            },
+            { 
+            "match": "\\bend-policy(?!-)\\b", 
+            "name": "keyword.routepolicy.iosxr" 
+            }
+        ]
+    }, 
+      "qos": { 
+        "patterns": [ 
+            {
+            "match": "^.*-set\\s(opaque|rt|soo|cost|bandwidth)?(.*)",
+                    "captures": { 
+                        "0": { "name": "string.regexp.sets.iosxr" }, 
+                        "1": { "name": "string.regexp.extcommtype.iosxr" }, 
+                        "2": { "name": "variable.sets.name.iosxr" }
+                        }
+            },
+            {
+            "match": "\\bservice-policy\\s(input|output)(.*)",
+                    "captures": { 
+                        "0": { "name": "string.qospolicy.iosxr" }, 
+                        "1": { "name": "keyword.qospolicydir.name.iosxr" }, 
+                        "2": { "name": "variable.qospolicy.name.iosxr" }
+                        }
+            },
+            { 
+            "match": "\\bend-(policy|class)-map\\b", 
+            "name": "string.qospolicy.iosxr" 
+            }, 
+            {
+            "match": "^\\s?class(-map)?\\s(match-(any|all))?(.*)",
+                    "captures": { 
+                        "0": { "name": "string.classmap.iosxr" }, 
+                        "2": { "name": "keyword.classmaptype.iosxr" }, 
+                        "4": { "name": "variable.classmap.name.iosxr" }
+                        }
+            },
+            {
+            "match": "^policy-map?\\s(.*)",
+                    "captures": { 
+                        "0": { "name": "string.qospolicy.iosxr" }, 
+                        "1": { "name": "variable.qospolicyname.iosxr" } 
+                        }
+            },
+            {
+            "match": "^\\smatch",
+            "name": "markup.inserted.classpermit.iosxr"
+            }
+        ]
     }
-  },   
+  }, 
   "patterns": [
     {  "include": "#comments" },  
     {  "include": "#acl" },  
+    {  "include": "#rpl" },  
+    {  "include": "#qos" },  
     {
       "match": "^\\s*no ",
       "name": "invalid.illegal.iosxr"
@@ -115,58 +182,27 @@
       "name": "keyword.control.interface.iosxr"
     },
     {
-      "match": "^(router|multicast-routing|mpls|dot1x|igmp|mld|segment-routing).*$",
+      "match": "^(router|multicast-routing|mpls|dot1x|igmp|mld|segment-routing|pce|srlg).*$",
       "name": "support.type.routing.iosxr"
     },
     {
-      "match": "^(username|accounting|clock|hw-module|hostname|logging|cdp|ntp|lldp|netconf-yang|grpc|frequency|gnss-receiver|key|domain|call-home|line|telemetry|bfd|control-plane|vty-pool|aaa|fpd|taskgroup|usergroup|service|hw-platform|(snmp|radius|tacacs|telnet|ssh)(-server)?)\\b",
+      "match": "^(username|accounting|clock|hw-module|hostname|logging|cdp|ntp|lldp|netconf-yang|grpc|frequency|gnss-receiver|key|domain|call-home|line|telemetry|bfd|control-plane|lawful-intercept|vty-pool|xml|aaa|controller|license|lpts|gnss-receiver|fpd|taskgroup|usergroup|service|hw-platform|(snmp|radius|tacacs|telnet|ssh)(-server)?)\\b",
       "name": "keyword.control.system.iosxr"
     },
     {
-      "match": "(?<!-)(vrf|evpn|l2vpn|ptp|dhcp|ethernet (cfm|oam|sla))(?!-)\\b",
+      "match": "(?<!-)(rewrite|performance-measurement|evpn|l2vpn|ptp|dhcp|ethernet (cfm|oam|sla))(?!-)\\b",
       "name": "constant.character.escape.services.iosxr"
     },
     {
-      "match": "(extcommunity|prefix)-set|route-policy|end-policy$|end-set\\b", 
-      "name": "string.regexp.sets.iosxr"
-    },
-    {
-      "match": "\\bipv(4|6) access-group\\b",
-      "name": "string.regexp.interface.iosxr"
-    },
-    {
-      "match": "\\bservice-policy\\b",
-      "name": "string.regexp.interface.iosxr"
-    },
-    {
-      "match": "\\b((class|policy)-map|end-(policy|class)-map)\\b",
-      "name": "string.qosmap.iosxr"
-    },
-    {
-      "match": "^class-map\\smatch-any\\s(.*)",
-            "captures": { 
-                "0": { "name": "string.classmap.iosxr" }
-                }
-    },
-    {
-      "match": "\\b((class|policy)-map|end-(policy|class)-map)\\b",
-      "name": "string.policymap.iosxr"
-    },
-    {
-      "match": "\\bend-(policy|class)-map\\b",
-      "name": "keyword.other.endmap.iosxr"
-    },
-    {
-      "match": "^([a-zA-Z]).*$", 
-      "name": "strong.emphasis.startsection.iosxr"
+      "match": "\\bvrf\\s(.*)",
+          "captures": { 
+              "0": { "name": "constant.character.escape.vrf.iosxr" }, 
+              "1": { "name": "variable.vrf.name.iosxr" } 
+              }
     },
     {
       "match": "^!$", 
       "name": "constant.regexp.endsection.iosxr"
-    },
-    {
-      "match": "!!ad",
-      "name": "markup.inserted" 
     }
   ]
 }
