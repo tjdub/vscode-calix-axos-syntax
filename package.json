@@ -2,7 +2,7 @@
     "name": "iosxr",
     "displayName": "Cisco IOS-XR Syntax",
     "description": "Cisco IOS-XR Syntax Highlighter",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "publisher": "philxor",
     "icon": "images/cisco.png",
     "license": "MIT",
@@ -21,11 +21,11 @@
             {
                 "id": "cisco-iosxr",
                 "aliases": [
-                    "iosxr", 
-                    "ios-xr" 
+                    "iosxr",
+                    "ios-xr"
                 ],
                 "extensions": [
-                    ".xr", 
+                    ".xr",
                     ".iosxr"
                 ],
                 "configuration": "./language-configuration.json"
@@ -35,7 +35,7 @@
             {
                 "language": "cisco-iosxr",
                 "scopeName": "text.iosxr",
-                "path": "./syntaxes/iosxr.tmGrammar.repo.json"  
+                "path": "./syntaxes/iosxr.tmGrammar.repo.json"
             }
         ]
     }
