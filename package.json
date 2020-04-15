@@ -3,7 +3,7 @@
     "displayName": "Cisco IOS-XR Syntax",
     "description": "Cisco IOS-XR Syntax Highlighter",
     "version": "1.0.0",
-    "publisher": "Phil Bedard",
+    "publisher": "philxor",
     "icon": "images/cisco.png",
     "license": "MIT",
     "engines": {
