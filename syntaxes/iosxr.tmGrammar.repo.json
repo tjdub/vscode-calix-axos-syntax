@@ -187,7 +187,7 @@
       "name": "keyword.control.interface.iosxr"
     },
     {
-      "match": "^(router|rsvp|multicast-routing|mpls|dot1x|igmp|mld|segment-routing|pce|srlg).*$",
+      "match": "^(router|rsvp|explicit-path|multicast-routing|mpls|dot1x|igmp|mld|segment-routing|pce|srlg).*$",
       "name": "support.type.routing.iosxr"
     },
     {
