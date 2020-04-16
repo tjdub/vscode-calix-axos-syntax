@@ -167,6 +167,10 @@
       "name": "variable.physinterface.iosxr" 
     }, 
     {
+      "match": "\\btunnel-te[0-9]+\\b", 
+      "name": "variable.tuninterface.iosxr" 
+    }, 
+    {
       "match": "\\bGigabitEthernet[0-9.\/-]+", 
       "name": "variable.physinterface.iosxr" 
     }, 
