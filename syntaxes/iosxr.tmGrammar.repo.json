@@ -147,12 +147,15 @@
       "name": "invalid.illegal.inside.iosxr"
     },
     {
+      "match": "Configuration\\s(version\\s=)?(.*)\\b", 
+          "captures": { 
+              "0": { "name": "constant.character.version.iosxr" }, 
+              "2": { "name": "invalid.illegal.version.number.iosxr" } 
+              }
+    }, 
+    {
       "match": "(?<=\\n)[\\w\\W]*(?=\\n)",
       "name": "invalid.illegal.inside.iosxr"
-    },
-    {
-      "match": "Configuration (\\d\\.)+\\d+[a-zA-Z]*",
-      "name": "variable.version.iosxr"
     },
     {
       "match": "(?<!-)interface\\s",
@@ -183,6 +186,13 @@
       "name": "variable.logicalinterface.iosxr" 
     }, 
     {
+      "match": "^hostname\\s(\\w+)\\b", 
+          "captures": { 
+              "0": { "name": "constant.character.hostname.iosxr" }, 
+              "1": { "name": "variable.hostname.name.iosxr" } 
+              }
+    }, 
+    {
       "match": "\\b(ipv(4|6) address|unnumbered|speed|(full-|half-)?duplex|cdp|encapsulation|lldp|bandwidth|mtu|bundle id|lacp|bfd|channel-group)\\b",
       "name": "keyword.control.interface.iosxr"
     },
@@ -191,7 +201,7 @@
       "name": "support.type.routing.iosxr"
     },
     {
-      "match": "^(username|group|end-group|apply-group|accounting|clock|hw-module|hostname|logging|cdp|ntp|lldp|netconf-yang|grpc|frequency|gnss-receiver|key|domain|netconf|call-home|line|telemetry|bfd|control-plane|lawful-intercept|vty-pool|xml|aaa|controller|license|lpts|gnss-receiver|fpd|taskgroup|usergroup|service|hw-platform|(snmp|radius|tacacs|telnet|ssh)(-server)?)\\b", 
+      "match": "^(username|group|end-group|apply-group|accounting|clock|hw-module|logging|cdp|ntp|lldp|netconf-yang|grpc|frequency|gnss-receiver|key|domain|netconf|call-home|line|telemetry|bfd|control-plane|lawful-intercept|vty-pool|xml|aaa|controller|license|lpts|gnss-receiver|fpd|taskgroup|usergroup|service|hw-platform|(snmp|radius|tacacs|telnet|ssh)(-server)?)\\b", 
       "name": "keyword.control.system.iosxr"
     },
     {
