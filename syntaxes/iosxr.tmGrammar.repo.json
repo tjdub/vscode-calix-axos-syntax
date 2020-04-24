@@ -1,5 +1,5 @@
 {
-  "scopeName": "text.iosxr",
+  "scopeName": "iosxr",
   "fileTypes": [
     "xr", 
     "iosxr", 
@@ -147,15 +147,12 @@
       "name": "invalid.illegal.inside.iosxr"
     },
     {
-      "match": "Configuration\\s(version\\s=)?(.*)\\b", 
-          "captures": { 
-              "0": { "name": "constant.character.version.iosxr" }, 
-              "2": { "name": "invalid.illegal.version.number.iosxr" } 
-              }
-    }, 
-    {
       "match": "(?<=\\n)[\\w\\W]*(?=\\n)",
       "name": "invalid.illegal.inside.iosxr"
+    },
+    {
+      "match": "Configuration (\\d\\.)+\\d+[a-zA-Z]*",
+      "name": "variable.version.iosxr"
     },
     {
       "match": "(?<!-)interface\\s",
@@ -170,38 +167,40 @@
       "name": "variable.physinterface.iosxr" 
     }, 
     {
-      "match": "\\btunnel-te[0-9]+\\b", 
-      "name": "variable.tuninterface.iosxr" 
-    }, 
-    {
-      "match": "\\bGigabitEthernet[0-9.\/-]+", 
-      "name": "variable.physinterface.iosxr" 
-    }, 
-    {
-      "match": "\\b(Ten|TwentyFive|Forty|Hundred|FourHundred)?GigE[0-9.\/-]+", 
-      "name": "variable.physinterface.iosxr" 
-    }, 
-    {
-      "match": "\\b(Loopback|Bundle-Ether|BVI)[0-9]+", 
-      "name": "variable.logicalinterface.iosxr" 
-    }, 
-    {
-      "match": "^hostname\\s(\\w+)\\b", 
+      "match": "\\b(GigabitEthernet[0-9\/]+)(.[0-9]+)?", 
           "captures": { 
-              "0": { "name": "constant.character.hostname.iosxr" }, 
-              "1": { "name": "variable.hostname.name.iosxr" } 
+              "1": { "name": "variable.phyisinterface.iosxr" }, 
+              "2": { "name": "support.type.subinterface.iosxr" } 
               }
     }, 
     {
-      "match": "\\b(ipv(4|6) address|unnumbered|speed|(full-|half-)?duplex|cdp|encapsulation|lldp|bandwidth|mtu|bundle id|lacp|bfd|channel-group)\\b",
+      "match": "\\b(Bundle-Ether[0-9\/]+)(.[0-9]+)?", 
+          "captures": { 
+              "1": { "name": "variable.phyisinterface.iosxr" }, 
+              "2": { "name": "support.type.subinterface.iosxr" } 
+              }
+    }, 
+    {
+      "match": "\\b((Ten|TwentyFive|Forty|Hundred|FourHundred)?GigE[0-9\/]+)(.[0-9]+)?", 
+          "captures": { 
+              "1": { "name": "variable.phyisinterface.iosxr" }, 
+              "3": { "name": "support.type.subinterface.iosxr" } 
+              }
+    }, 
+    {
+      "match": "\\b(Loopback|BVI)[0-9]+", 
+      "name": "variable.logicalinterface.iosxr" 
+    }, 
+    {
+      "match": "\\b(ipv(4|6) address|unnumbered|speed|(full-|half-)?duplex|cdp|encapsulation|lldp|bandwidth|mtu|lacp|bfd|channel-group)\\b",
       "name": "keyword.control.interface.iosxr"
     },
     {
-      "match": "^(router|rsvp|explicit-path|multicast-routing|mpls|dot1x|igmp|mld|segment-routing|pce|srlg).*$",
+      "match": "^(router|multicast-routing|mpls|dot1x|igmp|mld|segment-routing|pce|srlg).*$",
       "name": "support.type.routing.iosxr"
     },
     {
-      "match": "^(username|group|end-group|apply-group|accounting|clock|hw-module|logging|cdp|ntp|lldp|netconf-yang|grpc|frequency|gnss-receiver|key|domain|netconf|call-home|line|telemetry|bfd|control-plane|lawful-intercept|vty-pool|xml|aaa|controller|license|lpts|gnss-receiver|fpd|taskgroup|usergroup|service|hw-platform|(snmp|radius|tacacs|telnet|ssh)(-server)?)\\b", 
+      "match": "^(username|group|end-group|apply-group|accounting|clock|hw-module|hostname|logging|cdp|ntp|lldp|netconf-yang|grpc|frequency|gnss-receiver|key|domain|call-home|line|telemetry|bfd|control-plane|lawful-intercept|vty-pool|xml|aaa|controller|license|lpts|gnss-receiver|fpd|taskgroup|usergroup|service|hw-platform|(snmp|radius|tacacs|telnet|ssh)(-server)?)\\b", 
       "name": "keyword.control.system.iosxr"
     },
     {
