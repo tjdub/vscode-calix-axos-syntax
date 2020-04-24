@@ -31,6 +31,12 @@
                 "configuration": "./language-configuration.json"
             }
         ],
+        "snippets": [
+            {
+                "language": "cisco-iosxr",
+                "path": "./snippets/snippets.iosxr.json"
+            }
+        ],
         "grammars": [
             {
                 "language": "cisco-iosxr",
