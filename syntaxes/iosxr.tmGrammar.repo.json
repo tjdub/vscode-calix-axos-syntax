@@ -1,5 +1,5 @@
 {
-  "scopeName": "iosxr",
+  "scopeName": "text.iosxr",
   "fileTypes": [
     "xr", 
     "iosxr", 
