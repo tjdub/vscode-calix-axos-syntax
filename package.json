@@ -1,17 +1,17 @@
 {
-    "name": "iosxr",
-    "displayName": "Cisco IOS-XR Syntax",
-    "description": "Cisco IOS-XR Syntax Highlighter",
-    "version": "1.0.3",
-    "publisher": "philxor",
-    "icon": "images/cisco.png",
+    "name": "calix-axos",
+    "displayName": "Calix AXOS Syntax",
+    "description": "Calix AXOS Syntax Highlighter",
+    "version": "1.0.0",
+    "publisher": "tjdub",
+    "icon": "images/calix.png",
     "license": "MIT",
     "engines": {
         "vscode": "^1.5.0"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/philbedard/vscode-cisco-xr-syntax.git"
+        "url": "git+https://github.com/tjdub/vscode-calix-axos-syntax.git"
     },
     "categories": [
         "Programming Languages"
@@ -19,29 +19,28 @@
     "contributes": {
         "languages": [
             {
-                "id": "cisco-iosxr",
+                "id": "calix-axos",
                 "aliases": [
-                    "iosxr",
-                    "ios-xr"
+                    "axos",
+                    "calix-axos"
                 ],
                 "extensions": [
-                    ".xr",
-                    ".iosxr"
+                    ".axos"
                 ],
                 "configuration": "./language-configuration.json"
             }
         ],
         "snippets": [
             {
-                "language": "cisco-iosxr",
-                "path": "./snippets/snippets.iosxr.json"
+                "language": "calix-axos",
+                "path": "./snippets/snippets.axos.json"
             }
         ],
         "grammars": [
             {
-                "language": "cisco-iosxr",
-                "scopeName": "text.iosxr",
-                "path": "./syntaxes/iosxr.tmGrammar.repo.json"
+                "language": "calix-axos",
+                "scopeName": "text.axos",
+                "path": "./syntaxes/axos.tmGrammar.repo.json"
             }
         ]
     }
